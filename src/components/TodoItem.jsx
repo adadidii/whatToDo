@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodoContext } from "../App";
 
-const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
+const TodoItem = ({ todo }) => {
+  // Peroleh "toggleCompleted" dan "deleteTodo" dari TodoContext
+  const { toggleCompleted, deleteTodo } = useContext(TodoContext);
+
   // Definisikan function getTodoTitleStyle di sini, digunakan untuk dekorasi mencoret
   const getTodoTitleStyle = () => {
     if (todo.completed === true) {

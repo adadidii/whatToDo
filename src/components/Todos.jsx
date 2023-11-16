@@ -7,14 +7,7 @@ const Todos = ({ todos, toggleCompleted, deleteTodo }) => {
       {" "}
       {/*Perlu menuliskan kurung kurawal 2x seperti <div style={{CSS code}} sebab code JSX itu sendiri memerlukan {} dan sebuah object {CSS code} ditambahkan di dalamnya. */}
       {todos.map((todo) => {
-        return (
-          <TodoItem
-            Key={todo.id}
-            todo={todo}
-            toggleCompleted={toggleCompleted}
-            deleteTodo={deleteTodo}
-          />
-        );
+        return <TodoItem Key={todo.id} todo={todo} />;
       })}
     </div>
   );
