@@ -60,7 +60,6 @@ function App() {
   return (
     // Bungkus app dengan provider dari context
     <TodoContext.Provider value={{ toggleCompleted, deleteTodo }}>
-      // Menambah CSS
       <div style={styles.container}>
         <h1 style={styles.title}>My Todo List</h1>
         <TodoForm addTodo={addTodo} />
