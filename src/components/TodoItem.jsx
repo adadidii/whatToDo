@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoItem = ({ todo, toggleCompleted }) => {
+const TodoItem = ({ todo, toggleCompleted, deleteTodo }) => {
   // Definisikan function getTodoTitleStyle di sini, digunakan untuk dekorasi mencoret
   const getTodoTitleStyle = () => {
     if (todo.completed === true) {
@@ -8,6 +8,10 @@ const TodoItem = ({ todo, toggleCompleted }) => {
     } else {
       return { textDecoration: "none" };
     }
+  };
+
+  const handleDelete = () => {
+    deleteTodo(todo.id);
   };
 
   return (
@@ -20,7 +24,10 @@ const TodoItem = ({ todo, toggleCompleted }) => {
       />
       {/* Panggil function getTodoTitleStyle */}
       <p style={getTodoTitleStyle()}>{todo.title}</p>
-      <button style={styles.button}>x</button>
+      {/* Tambahkan onClick event pada button untuk menghapus */}
+      <button style={styles.button} onClick={handleDelete}>
+        x
+      </button>
     </div>
   );
 };
@@ -49,6 +56,7 @@ const styles = {
     border: "none",
     cursor: "pointer",
     fontSize: "16px",
+    marginLeft: "20px",
   },
 };
 

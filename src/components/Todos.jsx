@@ -1,7 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-const Todos = ({ todos, toggleCompleted }) => {
+const Todos = ({ todos, toggleCompleted, deleteTodo }) => {
   return (
     <div style={{ width: "40%", margin: "0 auto" }}>
       {" "}
@@ -12,6 +12,7 @@ const Todos = ({ todos, toggleCompleted }) => {
             Key={todo.id}
             todo={todo}
             toggleCompleted={toggleCompleted}
+            deleteTodo={deleteTodo}
           />
         );
       })}
