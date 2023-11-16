@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Todos from "./components/Todos";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -37,10 +38,16 @@ function App() {
     setTodos(updatedTodos);
   };
 
+  // Definisikan function addTodo
+  const addTodo = () => {
+    console.log("This is addTodo Function is ");
+  };
+
   return (
     // Menambah CSS
     <div style={styles.container}>
       <h1 style={styles.title}>My Todo List</h1>
+      <TodoForm addTodo={addTodo} />
       <Todos
         todos={todos}
         toggleCompleted={toggleCompleted}
@@ -54,6 +61,7 @@ const styles = {
   container: {
     textAlign: "center",
     padding: "12px",
+    fontFamily: "Arial",
   },
   title: {
     fontSize: "36px",
